@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import MainUnivList from "../components/MainUnivList.astro";
+import Container from "../components/Container.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -11,9 +12,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="bg-white dark:bg-gray-900">
     <Header title={SITE_TITLE} />
-    <main>
+    <main class="space-y-40 mb-40">
+      <Container />
       <MainUnivList />
     </main>
     <Footer />

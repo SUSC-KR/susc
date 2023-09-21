@@ -15,43 +15,36 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body>
+	<body class="bg-white dark:bg-gray-900">
 		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+		<main class="space-y-40 mb-40">
+			<div class="relative pt-36 ml-auto">
+				<div class="lg:w-2/3 text-center mx-auto text-gray-800 md:text-xl dark:text-white">
+					<article>
+						<div class="hero-image">
+							{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
+						<div class="prose">
+							<div class="title">
+								<div class="date">
+									<FormattedDate date={pubDate} />
+									{
+										updatedDate && (
+											<div class="last-updated-on">
+												Last updated on <FormattedDate date={updatedDate} />
+											</div>
+										)
+									}
+								</div>
+								<h1>{title}</h1>
+								<hr />
+							</div>
+							<slot />
+						</div>
+					</article>
 				</div>
-			</article>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
-
-<style>
-    html {
-        font-family: Urbanist, sans-serif;
-        scroll-behavior: smooth;
-    }
-
-    body {
-        margin: 0;
-    }
-</style>

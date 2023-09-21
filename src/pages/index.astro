@@ -3,9 +3,11 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import MainBannerTitle from "../components/BannerTitle.astro";
+import MainStats from "../components/MainStats.astro";
 import MainOrganizerList from "../components/MainOrganizerList.astro";
 import MainUnivList from "../components/MainUnivList.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import MainStats from "../components/MainStats.astro";
 ---
 
 <!doctype html>
@@ -17,6 +19,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <Header title={SITE_TITLE} />
     <main class="space-y-40 mb-40">
       <MainBannerTitle />
+      <MainStats />
 			<MainOrganizerList />
       <MainUnivList />
     </main>

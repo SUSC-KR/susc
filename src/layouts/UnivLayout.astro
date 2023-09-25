@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Container from "@components/Container.astro";
+
+const { univName, univImg, univDescription, leadName, viceLeadName, clubList } = Astro.props;
+
+interface Props {
+	univName: string;
+	univImg: string;
+	univDescription?: string;
+	leadName: string;
+	viceLeadName?: string[];
+	clubList: string[];
+}
+
+---
+
+
+<html lang="en">
+	<head>
+		<BaseHead title={univName} description="SUSC Univ" />
+	</head>
+
+	<body class="bg-white dark:bg-gray-900">
+		<Header />
+		<main class="space-y-40 mb-40">
+			<div class="relative pt-24 ml-auto">
+        <div class="lg:w-2/3 text-center mx-auto">
+					<Container>
+						<div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 rounded-md">
+							<img src={univImg} alt="" class="absolute brightness-50 inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
+							<div class="mx-auto max-w-7xl px-6 lg:px-8">
+								<div class="mx-auto max-w-2xl lg:mx-0">
+									<h2 class="text-4xl text-left font-bold tracking-tight text-white sm:text-6xl">{univName}</h2>
+									<p class="mt-6 text-lg text-left leading-8 text-gray-300">{univDescription}</p>
+								</div>
+							</div>
+						</div>
+						<div>
+							<slot />
+						</div>
+					</Container>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

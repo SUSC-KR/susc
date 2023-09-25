@@ -1,0 +1,43 @@
+---
+univName: '한국외국어대학교'
+univImg: '/images/univ/hufs/한국외대.jpeg'
+univDescription: '한국외국어대학교 동아리 리스트'
+leadName: '김현우'
+viceLeadName: ['박정식']
+clubList: ['SUSC YU']
+---
+
+
+## 한국외국어대학교 입니다.
+
+SUSC YU도 참여해셔 열심이 활동하고 있습니다.
+
+import UnivOrgCard from '@components/UnivOrgCard.astro';
+
+<section class="bg-white dark:bg-gray-900">
+	<div class="container px-6 py-10 mx-auto">
+		<h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Organizers</h1>
+
+		<p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
+				한국외국어대학교에서는 원활한 SUSC활동을 위해 아래의 구성원들이 고생해주고 있습니다.
+		</p>
+		<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
+			<UnivOrgCard 
+				orgImg="/images/univ/khu/org/hyeonwoo.jpeg"
+				orgName="김현우"
+				role="SUSC YU Lead"
+				github="https://github.com/Coalery"
+				linkedIn="https://linkedin.com/in/coalery"
+			/>
+			
+			<UnivOrgCard 
+				orgImg="/images/univ/khu/org/jeongsik.jpeg"
+				orgName="박정식"
+				role="SUSC YU ViceLead"
+				github="https://github.com/sat0317"
+				linkedIn="https://linkedin.com/in/parkjeongsik/"
+				instagram="https://www.instagram.com/park_quation/"
+			/>
+		</div>
+	</div>
+</section>

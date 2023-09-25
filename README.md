@@ -23,10 +23,12 @@ viceLeadName: ['부대표이름']
 clubList: ['동아리 명']
 ---
 
+import UnivInfo from '@components/UnivInfo.astro'
 
-## 학교명 입니다.
-
-설명
+<UnivInfo
+	univName="학교 이름"
+	clubList={['동아리 이름']}
+/>
 
 import UnivOrgCard from '@components/UnivOrgCard.astro';
 
@@ -35,9 +37,7 @@ import UnivOrgCard from '@components/UnivOrgCard.astro';
 	<div class="container px-6 py-10 mx-auto">
 		<h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Organizers</h1>
 
-		<p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
-				학교명에서는 원활한 SUSC활동을 위해 아래의 구성원들이 고생해주고 있습니다.
-		</p>
+		<p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">학교명에서는 원활한 SUSC활동을 위해 아래의 구성원들이 고생해주고 있습니다.</p>
 		<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
 			<UnivOrgCard 
 				orgImg="/images/univ/khu/org/.jpeg"

@@ -1,5 +1,9 @@
 # SUSC 공식 웹사이트
 
+## 빌드하는 법
+1. clone 후 `npm install`을 실행합니다.
+2. `npm run dev`를 실행합니다.
+
 ## SUSC 학교 등록 방법
 
 1. SUSC의 운영진에게 학교 등록을 요청합니다.

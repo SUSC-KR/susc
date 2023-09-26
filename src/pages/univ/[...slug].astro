@@ -14,8 +14,6 @@ type Props = CollectionEntry<'univ'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
-
-console.log(post.data);
 ---
 
 <UnivLayout {...post.data}>

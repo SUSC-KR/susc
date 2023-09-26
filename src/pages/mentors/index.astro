@@ -1,0 +1,61 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+import Container from "@components/Container.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import MentorCard from "@components/MentorCard.astro";
+
+import { getCollection } from "astro:content";
+
+const mentors = await getCollection("mentors");
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-white dark:bg-gray-900">
+    <Header title={SITE_TITLE} />
+    <main class="space-y-40 mb-40">
+      <div class="relative pt-36 ml-auto">
+        <div class="lg:w-2/3 text-center mx-auto">
+          <div id="mentor">
+            <Container>
+              <div class="mb-12 space-y-2 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
+									멘토
+                </h2>
+                <p class="break-words lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
+									SUSC를 위해 기여해주시고 계시는 멘토님들을 소개합니다.
+								</p>
+							</div>
+							<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {
+                  mentors.map((mentor) => (
+                    <MentorCard
+                      mentorName={mentor.data.mentorName}
+                      mentorImg={mentor.data.mentorImg}
+                      mentorBio={mentor.data.mentorBio}
+                      techStack={Object.values(mentor.data.techStack)}
+                      github={mentor.data.github}
+                      linkedIn={mentor.data.linkedIn}
+                      instagram={mentor.data.instagram}
+                    />
+                  ))
+                }
+							</div>
+						</Container>
+					</div>          
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+

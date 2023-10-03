@@ -1,4 +1,6 @@
 ---
+author: 'Yeonguk Choo'
+authorImg: '/blog/authors/yeonguk.webp'
 title: 'Second post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 22 2022'

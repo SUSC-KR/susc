@@ -4,46 +4,183 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Container from '@components/Container.astro';
+import '../styles/global.css';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, author, authorImg, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<style>
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+				line-height: 1.2;
+			}
+			h1 {
+				font-size: 3.052em;
+			}
+			h2 {
+				font-size: 2.441em;
+			}
+			h3 {
+				font-size: 1.953em;
+			}
+			h4 {
+				font-size: 1.563em;
+			}
+			h5 {
+				font-size: 1.25em;
+			}
+			strong,
+			b {
+				font-weight: 700;
+			}
+			a {
+				color: var(--accent);
+			}
+			a:hover {
+				color: var(--accent);
+			}
+			p {
+				margin-bottom: 1em;
+			}
+			.prose p {
+				margin-bottom: 2em;
+			}
+			textarea {
+				width: 100%;
+				font-size: 16px;
+			}
+			input {
+				font-size: 16px;
+			}
+			table {
+				width: 100%;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 8px;
+			}
+			code {
+				padding: 2px 5px;
+				background-color: rgb(var(--gray-light));
+				border-radius: 2px;
+			}
+			pre {
+				color: #f8fafc;
+				background-color: var(--tw-prose-pre-bg);
+				overflow-x: auto;
+				font-weight: 400;
+				font-size: .875em;
+				line-height: 1.7142857;
+				margin-top: 1.4285714285714286em;
+				margin-bottom: 2.2857142857142856em;
+				border-radius: 0.75rem;
+				padding: 1.25rem;
+				box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+				display: flex;
+			}
+			pre > code {
+				all: unset;
+			}
+			blockquote {
+				border-left: 4px solid var(--accent);
+				padding: 0 0 0 20px;
+				margin: 0px;
+				font-size: 1.333em;
+			}
+			hr {
+				border: none;
+				border-top: 1px solid rgb(var(--gray-light));
+			}
+
+			.sr-only {
+				border: 0;
+				padding: 0;
+				margin: 0;
+				position: absolute !important;
+				height: 1px;
+				width: 1px;
+				overflow: hidden;
+				/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+				clip: rect(1px 1px 1px 1px);
+				/* maybe deprecated but we need to support legacy browsers */
+				clip: rect(1px, 1px, 1px, 1px);
+				/* modern browsers, clip-path works inwards from each corner */
+				clip-path: inset(50%);
+				/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+				white-space: nowrap;
+			}
+
+		</style>
 	</head>
 
 	<body class="bg-white dark:bg-gray-900">
 		<Header />
 		<main class="space-y-40 mb-40">
 			<div class="relative pt-36 ml-auto">
-				<div class="lg:w-2/3 text-center mx-auto text-gray-800 md:text-xl dark:text-white">
-					<article>
-						<div class="hero-image">
-							{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-						</div>
-						<div class="prose">
-							<div class="title">
-								<div class="date">
-									<FormattedDate date={pubDate} />
-									{
-										updatedDate && (
-											<div class="last-updated-on">
-												Last updated on <FormattedDate date={updatedDate} />
-											</div>
-										)
-									}
+				<Container>
+					<div class="lg:w-2/3 text-center mx-auto text-gray-800 md:text-base dark:text-white">
+						<article class="text-start">
+							<div class="prose">
+								<div class="title">
+									<div class="date text-slate-700 dark:text-slate-400">
+										<FormattedDate date={pubDate} />
+										{
+											updatedDate && (
+												<div class="last-updated-on">
+													Last updated on <FormattedDate date={updatedDate} />
+												</div>
+											)
+										}
+									</div>
+									<h1 class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl ">{title}</h1>
+									<!-- author과 authorImg가 있으면 -->
+									{ author && authorImg &&(
+										<ul class="flex flex-wrap text-sm leading-6 m-3 -mx-5">
+											<li class="flex items-center font-medium whitespace-nowrap px-5">
+												<img class="mr-3 w-9 h-9 rounded-full bg-slate-50 dark:bg-slate-800" src={authorImg} alt="" />
+												<span class="text-slate-900 dark:text-slate-200">{author}</span>
+											</li>
+										</ul>
+									)}
+									<hr />
 								</div>
-								<h1>{title}</h1>
-								<hr />
+								<div class="mt-12 prose prose-slate dark:prose-dark" >
+									<slot />
+								</div>
 							</div>
-							<slot />
-						</div>
-					</article>
-				</div>
+						</article>
+					</div>
+				</Container>
 			</div>
+			<style>
+				pre {
+						color: #f8fafc;
+						background-color: var(--tw-prose-pre-bg);
+						overflow-x: auto;
+						font-weight: 400;
+						font-size: .875em;
+						line-height: 1.7142857;
+						margin-top: 1.4285714285714286em;
+						margin-bottom: 2.2857142857142856em;
+						border-radius: 0.75rem;
+						padding: 1.25rem;
+						box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+						display: flex;
+				}
+			</style>
 		</main>
 		<Footer />
 	</body>

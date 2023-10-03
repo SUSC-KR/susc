@@ -1,17 +1,7 @@
-pre {
-	color: #f8fafc;
-	background-color: var(--tw-prose-pre-bg);
-	overflow-x: auto;
-	font-weight: 400;
-	font-size: .875em;
-	line-height: 1.7142857;
-	margin-top: 1.4285714285714286em;
-	margin-bottom: 2.2857142857142856em;
-	border-radius: 0.75rem;
-	padding: 1.25rem;
-	box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
-	display: flex;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 body {
 	margin: 0;
@@ -23,109 +13,287 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
+
+.markdown ol {
+  @apply list-decimal pl-10;
 }
-h1 {
-	font-size: 3.052em;
+.markdown ul {
+  @apply list-disc pl-10;
 }
-h2 {
-	font-size: 2.441em;
+.markdown h1 {
+  @apply border-red-500 border-l-4 text-4xl;
 }
-h3 {
-	font-size: 1.953em;
+.markdown h2 {
+  @apply border-orange-500 border-l-4 text-3xl;
 }
-h4 {
-	font-size: 1.563em;
+.markdown h3 {
+  @apply border-blue-500 border-l-4 text-2xl;
 }
-h5 {
-	font-size: 1.25em;
+.markdown h4 {
+  @apply border-green-500 border-l-4 text-lg;
 }
-strong,
-b {
-	font-weight: 700;
+.markdown h5 {
+  @apply border-yellow-500 border-l-4 text-base;
 }
-a {
-	color: var(--accent);
+.markdown h6 {
+  @apply border-purple-500 border-l-4 text-sm;
 }
-a:hover {
-	color: var(--accent);
+.markdown p {
+  @apply my-4 text-base;
 }
-p {
-	margin-bottom: 1em;
+.markdown a {
+  @apply text-blue-500 underline;
 }
-.prose p {
-	margin-bottom: 2em;
+.markdown blockquote {
+  @apply border-l-4 border-gray-300 italic my-8 pl-4;
 }
-textarea {
-	width: 100%;
-	font-size: 16px;
+.markdown pre {
+  @apply my-8 p-4 rounded;
 }
-input {
-	font-size: 16px;
+.markdown code {
+  @apply rounded;
 }
-table {
-	width: 100%;
+.markdown table {
+  @apply border-collapse border-gray-300 my-8;
 }
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
+.markdown table th {
+  @apply border border-gray-300 p-2;
 }
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	color: #f8fafc;
-	background-color: var(--tw-prose-pre-bg);
-	overflow-x: auto;
-	font-weight: 400;
-	font-size: .875em;
-	line-height: 1.7142857;
-	margin-top: 1.4285714285714286em;
-	margin-bottom: 2.2857142857142856em;
-	border-radius: 0.75rem;
-	padding: 1.25rem;
-	box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
-	display: flex;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+.markdown table td {
+  @apply border border-gray-300 p-2;
 }
 
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
+/* .markdown table tr:nth-child(odd) {
+  @apply bg-white;
+} */
+.markdown table tr:hover {
+  @apply bg-gray-200;
+}
+.markdown table th:first-child,
+.markdown table td:first-child {
+  @apply pl-4;
+}
+.markdown table th:last-child,
+.markdown table td:last-child {
+  @apply pr-4;
+}
+.markdown table th:not(:first-child):not(:last-child),
+.markdown table td:not(:first-child):not(:last-child) {
+  @apply px-2;
+}
+.markdown table th:not(:first-child):not(:last-child) {
+  @apply text-left;
+}
+.markdown table td:not(:first-child):not(:last-child) {
+  @apply text-right;
+}
+.markdown table th:only-child,
+.markdown table td:only-child {
+  @apply px-4;
+}
+.markdown table th:only-child {
+  @apply text-center;
+}
+.markdown table td:only-child {
+  @apply text-center;
+}
+.markdown table th:only-child:first-child,
+.markdown table td:only-child:first-child {
+  @apply pl-4;
+}
+.markdown table th:only-child:last-child,
+.markdown table td:only-child:last-child {
+  @apply pr-4;
+}
+.markdown table th:only-child:not(:first-child):not(:last-child),
+.markdown table td:only-child:not(:first-child):not(:last-child) {
+  @apply px-2;
+}
+.markdown table th:only-child:not(:first-child):not(:last-child) {
+  @apply text-left;
+}
+.markdown table td:only-child:not(:first-child):not(:last-child) {
+  @apply text-right;
+}
+.markdown table th:first-child:last-child,
+.markdown table td:first-child:last-child {
+  @apply px-4;
+}
+.markdown table th:first-child:last-child {
+  @apply text-center;
+}
+.markdown table td:first-child:last-child {
+  @apply text-center;
+}
+.markdown table th:first-child:not(:last-child),
+.markdown table td:first-child:not(:last-child) {
+  @apply pl-4;
+}
+.markdown table th:last-child:not(:first-child),
+.markdown table td:last-child:not(:first-child) {
+  @apply pr-4;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child),
+.markdown table td:not(:first-child):not(:last-child):not(:only-child) {
+  @apply px-2;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child) {
+  @apply text-left;
+}
+.markdown table td:not(:first-child):not(:last-child):not(:only-child) {
+  @apply text-right;
+}
+.markdown table th:first-child:last-child:not(:only-child),
+.markdown table td:first-child:last-child:not(:only-child) {
+  @apply px-4;
+}
+.markdown table th:first-child:last-child:not(:only-child) {
+  @apply text-center;
+}
+.markdown table td:first-child:last-child:not(:only-child) {
+  @apply text-center;
+}
+.markdown table th:first-child:not(:last-child):not(:only-child),
+.markdown table td:first-child:not(:last-child):not(:only-child) {
+  @apply pl-4;
+}
+.markdown table th:last-child:not(:first-child):not(:only-child),
+.markdown table td:last-child:not(:first-child):not(:only-child) {
+  @apply pr-4;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child),
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child) {
+  @apply px-2;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child) {
+  @apply text-left;
+}
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child) {
+  @apply text-right;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child),
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child) {
+  @apply px-4;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table th:first-child:not(:last-child):not(:only-child):not(:only-child),
+.markdown table td:first-child:not(:last-child):not(:only-child):not(:only-child) {
+  @apply pl-4;
+}
+.markdown table th:last-child:not(:first-child):not(:only-child):not(:only-child),
+.markdown table td:last-child:not(:first-child):not(:only-child):not(:only-child) {
+  @apply pr-4;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply px-2;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-left;
+}
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-right;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child):not(:only-child) {
+  @apply px-4;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table th:first-child:not(:last-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:first-child:not(:last-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply pl-4;
+}
+.markdown table th:last-child:not(:first-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:last-child:not(:first-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply pr-4;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply px-2;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-left;
+}
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-right;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply px-4;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table th:first-child:not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:first-child:not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply pl-4;
+}
+.markdown table th:last-child:not(:first-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:last-child:not(:first-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply pr-4;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply px-2;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-left;
+}
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-right;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply px-4;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table th:first-child:not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:first-child:not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply pl-4;
+}
+.markdown table th:last-child:not(:first-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:last-child:not(:first-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply pr-4;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply px-2;
+}
+.markdown table th:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-left;
+}
+.markdown table td:not(:first-child):not(:last-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-right;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child),
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply px-4;
+}
+.markdown table th:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table td:first-child:last-child:not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child):not(:only-child) {
+  @apply text-center;
+}
+.markdown table th:first-child:not
+.markdown ol {
+  @apply list-decimal pl-10;
 }

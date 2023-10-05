@@ -4,10 +4,11 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
 import Container from "@components/Container.astro";
-import MainUnivCard from "@components/MainUnivCard.astro";
+import UnivCard from "@components/UnivCard.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
+import UnivList from "@components/UnivList.astro";
 
 const univs = await getCollection("univ")
 ---
@@ -21,32 +22,7 @@ const univs = await getCollection("univ")
     <Header title={SITE_TITLE} />
     <main class="space-y-40 mb-40">
       <div class="relative pt-36 ml-auto">
-        <div class="lg:w-2/3 text-center mx-auto">
-          <div id="univ">
-            <Container>
-              <div class="mb-12 space-y-2 text-center">
-                <h2 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
-                  참여 동아리
-                </h2>
-                <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
-                  등록 학교 리스트 부제목 내용
-                </p>
-              </div>
-              <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {
-                  univs.map((univ) => (
-                    <MainUnivCard
-                      path={`/univ/${univ.slug}/`}
-                      univName={univ.data.univName}
-                      univImg={`${univ.data.univImg}`}
-                      univDescription={univ.data.univDescription}
-                    />
-                  ))
-                }
-              </div>
-            </Container>
-          </div>          
-        </div>
+        <UnivList />
       </div>
     </main>
     <Footer />

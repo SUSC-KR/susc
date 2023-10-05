@@ -1,11 +1,11 @@
 ---
-const { path, univImg, univName, univDescription } = Astro.props;
+const { path, univImg, univName, clubList } = Astro.props;
 
 interface Props {
 	path: string;
   univImg: string;
   univName: string;
-	univDescription: string;
+	clubList: string[];
 }
 
 ---
@@ -30,7 +30,7 @@ class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-
 				{univName}
 			</h3>
 			<p class="mt-6 mb-8 text-gray-600 dark:text-gray-300">
-				{univDescription}
+				{clubList.join(', ')}
 			</p>
 		</div>
 	</a>

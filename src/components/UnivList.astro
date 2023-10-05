@@ -1,6 +1,6 @@
 ---
 import Container from "./Container.astro";
-import MainUnivCard from "./MainUnivCard.astro";
+import UnivCard from "./UnivCard.astro";
 import { getCollection } from "astro:content";
 
 const univs = await getCollection("univ")
@@ -10,20 +10,20 @@ const univs = await getCollection("univ")
   <Container>
     <div class="mb-12 space-y-2 text-center">
       <h2 class="text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
-        참여 동아리
+        참여 학교 및 동아리
       </h2>
       <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
-        등록 학교 리스트 부제목 내용
+        SUSC 활동에 참여할 학교와 동아리들입니다. 
       </p>
     </div>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         univs.map((univ) => (
-          <MainUnivCard
+          <UnivCard
             path={`/univ/${univ.slug}/`}
             univName={univ.data.univName}
             univImg={`${univ.data.univImg}`}
-            univDescription={univ.data.univDescription}
+            clubList={univ.data.clubList}
           />
         ))
       }

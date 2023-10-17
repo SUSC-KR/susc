@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Container from "@components/Container.astro";
+import '../styles/global.css';
+
+
+const { sponsorName, sponsorImg, sponsorDescription, website } = Astro.props;
+
+interface Props {
+	sponsorName: string;
+	sponsorImg: string;
+	sponsorDescription: string;
+	website: string;
+}
+
+---
+
+
+<html lang="en">
+	<head>
+		<BaseHead title="SUSC의 후원사" description={sponsorName} />
+	</head>
+	<body class="bg-white dark:bg-gray-900">
+		<Header />
+		<main class="space-y-40 mb-40 pt-36">
+			<Container>
+				<div class="mx-auto max-w-7xl px-6 lg:px-8">
+					<div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+						<div class="lg:pr-8 lg:pt-4 order-2 sm:order-2 md:order-2 lg:order-1">
+							<h3 class="text-base font-semibold leading-7 text-indigo-600">SUSC의 후원사 소개</h2>
+							<h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">{sponsorName}</h2>
+							<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{sponsorDescription}</p>
+							<div class="mt-8">
+								<div class="rounded-md shadow">
+									<a href={website} class="items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+										홈페이지에서 더 알아보기
+									</a>
+								</div>
+							</div>
+						</div>
+						<img src={sponsorImg} alt="" class="order-1 sm:order-1 md:order-1 lg:order-2 w-[48rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] order-1 md:-ml-4 order-1 lg:-ml-0">
+					</div>
+				</div>
+				<article class="text-start px-6 lg:px-8">
+					<div class="mt-12 prose prose-slate dark:prose-dark markdown">
+						<slot />
+					</div>
+				</article>
+			</Container>
+
+		</main>
+		<Footer />
+	</body>
+</html>

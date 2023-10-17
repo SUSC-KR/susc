@@ -15,10 +15,10 @@ body {
 }
 
 .markdown ol {
-  @apply list-decimal pl-10;
+  @apply list-decimal pl-10 md:text-base;
 }
 .markdown ul {
-  @apply list-disc pl-10;
+  @apply list-disc pl-10 md:text-base;
 }
 .markdown h1 {
   @apply border-red-500 border-l-4 text-4xl;

@@ -4,14 +4,14 @@ univImg: '/images/univ/dgu/동국대.jpeg'
 univDescription: '동국대학교 동아리 리스트'
 leadName: ''
 viceLeadName: ['']
-clubList: ['SUSC DGU']
+clubList: ['SUSC DGU', 'UMC']
 ---
 
 import UnivInfo from '@components/UnivInfo.astro'
 
 <UnivInfo
 	univName="동국대학교"
-	clubList={['SUSC DGU']}
+	clubList={['SUSC DGU', 'UMC']}
 />
 
 import UnivOrgCard from '@components/UnivOrgCard.astro';
@@ -24,19 +24,18 @@ import UnivOrgCard from '@components/UnivOrgCard.astro';
 		<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
 			<UnivOrgCard 
 				orgImg="/images/univ/kmou/org/yeonguk.webp"
-				orgName="추영욱"
-				role="SUSC KMOU Lead"
+				orgName="허은정"
+				role="SUSC DGU Ambassador"
         github="https://github.com/choo121600"
         linkedIn="https://linkedin.com/in/keith-choo-yu991216"
         instagram="https://www.instagram.com/yeong_uk._"
 			/>
 			<UnivOrgCard 
 				orgImg="/images/univ/kmou/org/yeonguk.webp"
-				orgName="추영욱"
-				role="SUSC KMOU ViceLead"
+				orgName="하지은"
+				role="UMC"
         github="https://github.com/choo121600"
         linkedIn="https://linkedin.com/in/keith-choo-yu991216"
-        instagram="https://www.instagram.com/yeong_uk._"
 			/>
 		</div>
 	</div>

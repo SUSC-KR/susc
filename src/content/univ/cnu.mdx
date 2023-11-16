@@ -1,0 +1,35 @@
+---
+univName: '충남대학교'
+univImg: '/images/univ/cnu/cnu.jpeg'
+univDescription: '충남대학교 동아리 리스트'
+leadName: '최동현'
+viceLeadName: ['']
+clubList: ['Motion']
+---
+
+
+import UnivInfo from '@components/UnivInfo.astro'
+
+<UnivInfo
+	univName="충남대학교"
+	clubList={['Motion']}
+/>
+import UnivOrgCard from '@components/UnivOrgCard.astro';
+
+<section class="bg-white dark:bg-gray-900">
+	<div class="container px-6 py-10 mx-auto">
+		<h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Organizers</h1>
+
+		<p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">충남대학교에서는 원활한 SUSC활동을 위해 아래의 구성원들이 고생해주고 있습니다.</p>
+		<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
+			<UnivOrgCard 
+				orgImg="/images/univ/cnu/org/donghyun.jpeg"
+				orgName="최동현"
+				role="MLP Lead"
+        github="https://github.com/downpool"
+        linkedIn="https://www.linkedin.com/in/downpool/"
+        instagram="https://www.instagram.com/downpool_/"
+			/>
+		</div>
+	</div>
+</section>

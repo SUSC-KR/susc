@@ -1,0 +1,53 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+import Container from "@components/Container.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-white dark:bg-gray-900">
+    <Header title={SITE_TITLE} />
+    <main class="space-y-40 mb-40">
+      <div class="relative pt-36 ml-auto">
+
+        <!-- 2023 SUMMER Stats -->
+        <section class="text-gray-600 body-font">
+          <Container>
+            <div class="container px-5 py-12 mx-auto">
+              <div class="flex flex-col text-center w-full mb-10">
+                <h2 class="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl mb-4">2023 SUMMER</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">2023년 7월부터 8월까지 약 한 달간 총 6개 대학에서 방학교류를 진행했습니다.</p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg">
+                  <h2 class="text-3xl text-gray-900 dark:text-white font-medium">70 명</h2>
+                  <p class="mt-2 text-gray-600 dark:text-gray-400">교류에 참여한 학생</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg">
+                  <h2 class="text-3xl text-gray-900 dark:text-white font-medium">6 개 대학</h2>
+                  <p class="mt-2 text-gray-600 dark:text-gray-400">교류에 참여한 학교</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg">
+                  <h2 class="text-3xl text-gray-900 dark:text-white font-medium">10 명</h2>
+                  <p class="mt-2 text-gray-600 dark:text-gray-400">교류에 기여한 멘토</p>
+                </div>
+              </div>			
+            </div>
+          </Container>
+        </section>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+

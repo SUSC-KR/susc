@@ -1,0 +1,34 @@
+---
+import Container from "./Container.astro";
+import { getCollection } from "astro:content";
+import StudyCard from "./StudyCard.astro";
+
+const currentStudy = await getCollection("study");
+
+---
+
+<div id="study">
+	<Container>
+		<div class="mb-12 space-y-2 text-center">
+			<h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">스터디 목록</h2>
+      <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
+				SUSC에서 진행하는 스터디 목록입니다.
+			</p>
+		</div>
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+			{
+				currentStudy.map((study) => (
+					<StudyCard
+						path={`/study/${study.slug}/`}
+						studyName={study.data.studyName}
+						studyImg={study.data.studyImg}
+						studyType={study.data.studyType}
+						studyStatus={study.data.studyStatus}
+						maxPeople={study.data.maxPeople}
+						memberNameList={study.data.memberNameList}
+					/>
+				))
+			}
+		</div>
+	</Container>
+</div>

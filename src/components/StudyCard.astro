@@ -1,0 +1,40 @@
+---
+const { path, studyName, studyImg, studyType, studyStatus, maxPeople, memberNameList } = Astro.props;
+
+interface Porps {
+	studyName: string;
+	studyImg: string;
+	studyType: string;
+	studyStatus: string;
+	maxPeople: number;
+	memberNameList: string[];
+}
+
+let currentPeople = memberNameList.length;
+
+---
+
+<div
+	class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+>
+	<a href={path}>
+		<div class="h-32  w-full flex flex-col justify-center items-center relative overflow-hidden rounded-xl">
+			<img
+				src={studyImg}
+				alt="art cover"
+				loading="lazy"
+				width="1000"
+				height="667"
+				class="h-auto w-44 object-cover transition duration-500 group-hover:scale-105"
+			/>
+		</div>
+		<div class="text-center mt-6 relative">
+			<h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
+				{studyName}
+			</h3>
+			<p class="mt-6 mb-8 text-gray-600 dark:text-gray-300">
+				{currentPeople} / {maxPeople} 명
+			</p>
+		</div>
+	</a>
+</div>

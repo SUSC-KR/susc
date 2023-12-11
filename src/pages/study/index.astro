@@ -1,0 +1,25 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import StudyList from "@components/StudyList.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+---
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="bg-white dark:bg-gray-900">
+		<Header title={SITE_TITLE} />
+		<main class="space-y-40 mb-40">
+			<div class="relative pt-36 ml-auto">
+				<StudyList />
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

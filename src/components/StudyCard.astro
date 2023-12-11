@@ -11,6 +11,7 @@ interface Porps {
 }
 
 let currentPeople = memberNameList.length;
+let studyThumbnail = studyImg || "favicon.png";
 
 ---
 
@@ -20,7 +21,7 @@ let currentPeople = memberNameList.length;
 	<a href={path}>
 		<div class="h-32  w-full flex flex-col justify-center items-center relative overflow-hidden rounded-xl">
 			<img
-				src={studyImg}
+				src={studyThumbnail}
 				alt="art cover"
 				loading="lazy"
 				width="1000"

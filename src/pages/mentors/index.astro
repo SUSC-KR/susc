@@ -47,6 +47,7 @@ const seminarMentors = await getCollection("seminarMentors");
                         mentorImg={mentor.data.mentorImg}
                         mentorBio={mentor.data.mentorBio}
                         techStack={Object.values(mentor.data.techStack)}
+                        active={mentor.data.active}
                         github={mentor.data.github}
                         linkedIn={mentor.data.linkedIn}
                         instagram={mentor.data.instagram}

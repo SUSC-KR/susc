@@ -1,11 +1,12 @@
 ---
-const { mentorName, mentorImg, mentorBio, techStack, linkedIn, github, instagram } = Astro.props;
+const { mentorName, mentorImg, mentorBio, techStack, active, linkedIn, github, instagram } = Astro.props;
 
 interface Props {
 	mentorName: string;
 	mentorImg: string;
 	mentorBio: string;
 	techStack: string[];
+	active: string[];
 	linkedIn?: string;
 	github?: string;
 	instagram?: string;
@@ -23,6 +24,12 @@ interface Props {
 	<div class="flex flex-wrap mt-5">
 		{techStack.map((tech) => (
 			<span class="m-0.5 px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded dark:bg-gray-800 dark:text-gray-300">{tech}</span>
+		))}
+	</div>
+
+	<div class="flex flex-wrap mt-5">
+		{active.map((activeTime) => (
+			<span class="m-0.5 px-2 py-1 text-sm text-gray-700 bg-green-200 rounded dark:bg-green-800 dark:text-gray-300">{activeTime}</span>
 		))}
 	</div>
 

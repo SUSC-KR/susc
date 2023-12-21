@@ -45,7 +45,6 @@ const seminarMentors = await getCollection("seminarMentors");
                       <StudyMentorCard
                         mentorName={mentor.data.mentorName}
                         mentorImg={mentor.data.mentorImg}
-                        mentorBio={mentor.data.mentorBio}
                         techStack={Object.values(mentor.data.techStack)}
                         active={mentor.data.active}
                         github={mentor.data.github}

@@ -1,10 +1,9 @@
 ---
-const { mentorName, mentorImg, mentorBio, techStack, active, linkedIn, github, instagram } = Astro.props;
+const { mentorName, mentorImg, techStack, active, linkedIn, github, instagram } = Astro.props;
 
 interface Props {
 	mentorName: string;
 	mentorImg: string;
-	mentorBio: string;
 	techStack: string[];
 	active: string[];
 	linkedIn?: string;
@@ -18,8 +17,6 @@ interface Props {
 	<img class="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src={mentorImg} alt="orgImage">
 
 	<h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">{mentorName}</h1>
-
-	<p class="mt-2 text-gray-500 capitalize dark:text-gray-300">{mentorBio}</p>
 
 	<div class="flex flex-wrap mt-5">
 		{techStack.map((tech) => (

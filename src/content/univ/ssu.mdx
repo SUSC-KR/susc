@@ -1,0 +1,32 @@
+---
+univName: '숭실대학교'
+univImg: '/images/univ/ssu/ssu.jpeg'
+univDescription: '숭실대학교 동아리 리스트'
+leadName: '윤재선'
+viceLeadName: ['']
+clubList: ['로보틱스']
+---
+
+
+import UnivInfo from '@components/UnivInfo.astro'
+
+<UnivInfo
+	univName="숭실대학교"
+	clubList={['로보틱스']}
+/>
+import UnivOrgCard from '@components/UnivOrgCard.astro';
+
+<section class="bg-white dark:bg-gray-900">
+	<div class="container px-6 py-10 mx-auto">
+		<h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Organizers</h1>
+
+		<p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">숭실대학교에서는 원활한 SUSC활동을 위해 아래의 구성원들이 고생해주고 있습니다.</p>
+		<div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
+			<UnivOrgCard 
+				orgImg="/images/defaultImg/SUSC.png"
+				orgName="윤재선"
+				role="로보틱스"
+			/>
+		</div>
+	</div>
+</section>

@@ -15,10 +15,10 @@ body {
 }
 
 .markdown ol {
-  @apply list-decimal pl-8 md:text-base dark:text-white;
+  @apply list-decimal pl-8 md:text-base dark:text-white text-base;
 }
 .markdown ul {
-  @apply list-disc my-2 pl-8 md:text-base dark:text-white;
+  @apply list-disc my-2 pl-8 md:text-base dark:text-white text-base;
 }
 .markdown h1 {
   @apply mt-8 border-red-500 border-l-4 text-4xl dark:text-white;

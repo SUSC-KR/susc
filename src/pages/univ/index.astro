@@ -1,14 +1,14 @@
 ---
-import BaseHead from "@components/BaseHead.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
+import BaseHead from "@components/base/BaseHead.astro";
+import Header from "@components/base/Header.astro";
+import Footer from "@components/base/Footer.astro";
 
-import Container from "@components/Container.astro";
-import UnivCard from "@components/UnivCard.astro";
+import Container from "@components/base/Container.astro";
+import UnivCard from "@components/univ/UnivCard.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
-import UnivList from "@components/UnivList.astro";
+import UnivList from "@components/univ/UnivList.astro";
 
 const univs = await getCollection("univ")
 ---

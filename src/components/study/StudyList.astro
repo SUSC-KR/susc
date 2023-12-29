@@ -1,7 +1,7 @@
 ---
-import Container from "./Container.astro";
+import Container from "@components/base/Container.astro";
 import { getCollection } from "astro:content";
-import StudyCard from "./StudyCard.astro";
+import StudyCard from "../study/StudyCard.astro";
 
 const currentStudy = await getCollection("study");
 

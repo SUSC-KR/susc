@@ -15,28 +15,28 @@ body {
 }
 
 .markdown ol {
-  @apply list-decimal pl-10 md:text-base dark:text-white;
+  @apply list-decimal pl-8 md:text-base dark:text-white;
 }
 .markdown ul {
-  @apply list-disc pl-10 md:text-base dark:text-white;
+  @apply list-disc my-2 pl-8 md:text-base dark:text-white;
 }
 .markdown h1 {
-  @apply border-red-500 border-l-4 text-4xl dark:text-white;
+  @apply mt-8 border-red-500 border-l-4 text-4xl dark:text-white;
 }
 .markdown h2 {
-  @apply border-orange-500 border-l-4 text-3xl dark:text-white;
+  @apply mt-6 border-orange-500 border-l-4 text-3xl dark:text-white;
 }
 .markdown h3 {
-  @apply border-blue-500 border-l-4 text-2xl dark:text-white;
+  @apply mt-6 border-blue-500 border-l-4 text-2xl dark:text-white;
 }
 .markdown h4 {
-  @apply border-green-500 border-l-4 text-lg dark:text-white;
+  @apply mt-6 border-green-500 border-l-4 text-lg dark:text-white;
 }
 .markdown h5 {
-  @apply border-yellow-500 border-l-4 text-base dark:text-white;
+  @apply mt-6 border-yellow-500 border-l-4 text-base dark:text-white;
 }
 .markdown h6 {
-  @apply border-purple-500 border-l-4 text-sm;
+  @apply mt-6 border-purple-500 border-l-4 text-sm;
 }
 .markdown p {
   @apply my-4 text-base dark:text-white;

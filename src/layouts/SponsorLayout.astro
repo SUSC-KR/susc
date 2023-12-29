@@ -40,20 +40,7 @@ interface Props {
 								</div>
 							</div>
 						</div>
-						<div>
-							<img
-								id="sponsorImg"
-								src={sponsorImgW || sponsorImg}
-								alt=""
-								class="order-1 sm:order-1 md:order-1 lg:order-2 w-[40rem] rounded-xl sm:w-[47rem] order-1 md:-ml-4 order-1 lg:-ml-0"
-							/>
-							<script is:inline>
-								const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-								console.log(isDarkMode);
-								const sponsorImgElement = document.getElementById('sponsorImg');
-								console.log(sponsorImgElement);
-							</script>
-						</div>
+						<img src={sponsorImg} alt="" class="order-1 sm:order-1 md:order-1 lg:order-2 w-[40rem] rounded-xl sm:w-[47rem] order-1 md:-ml-4 order-1 lg:-ml-0">
 					</div>
 				</div>
 				<article class="text-start px-6 lg:px-8">

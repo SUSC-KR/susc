@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Container from "@components/Container.astro";
+import '../styles/global.css';
+
+const { path, studyName, studyImg, studyPeriod, studyDescription, studyType, maxPeople, memberNameList } = Astro.props;
+
+interface Porps {
+	studyName: string;
+	studyImg: string;
+	studyType: string;
+	studyDescription: string;
+	studyPeriod: string[];
+	maxPeople: number;
+	memberNameList: string[];
+}
+
+let studyThumbnail = studyImg || "/favicon.png";
+
+---
+
+
+<html lang="en">
+	<head>
+		<BaseHead title={studyName} description="SUSC Study" />
+	</head>
+
+	<body class="bg-white dark:bg-gray-900">
+		<Header />
+		<main class="space-y-40 mb-40">
+			<div class="relative pt-36 ml-auto">
+				<Container>
+					<div class="lg:w-2/3 text-center mx-auto text-gray-800 md:text-base dark:text-white">
+						<div class="relative isolate overflow-hidden bg-gray-900  rounded-md">
+							<div class="mx-auto max-w-7xl">
+								<div class="mx-auto max-w-2xl lg:mx-0">
+									<div class="flex mt-4">
+										{studyPeriod.map((studyTime: string) => (
+											<span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center">
+												{studyTime}
+											</span>
+										))}
+									</div>
+									<h2 class="mt-4 text-4xl text-left font-bold tracking-tight text-white sm:text-6xl">{studyName}</h2>
+									<p class="mt-6 text-lg text-left leading-8 text-gray-300">{studyDescription}</p>
+								</div>
+							</div>
+						</div>
+						<article class="text-start">
+							<div class="mt-12 prose prose-slate dark:prose-dark markdown" >
+								<slot />
+							</div>
+						</article>
+					</div>
+				</Container>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

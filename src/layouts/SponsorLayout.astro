@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -7,15 +6,15 @@ import Container from "@components/Container.astro";
 import '../styles/global.css';
 
 
-const { sponsorName, sponsorImg, sponsorDescription, website } = Astro.props;
+const { sponsorName, sponsorImg, sponsorImgW, sponsorDescription, website } = Astro.props;
 
 interface Props {
 	sponsorName: string;
 	sponsorImg: string;
+	sponsorImgW?: string;
 	sponsorDescription: string;
 	website: string;
 }
-
 ---
 
 
@@ -30,7 +29,7 @@ interface Props {
 				<div class="mx-auto max-w-7xl px-6 lg:px-8">
 					<div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
 						<div class="lg:pr-8 lg:pt-4 order-2 sm:order-2 md:order-2 lg:order-1">
-							<h3 class="text-base font-semibold leading-7 text-indigo-600">SUSC의 후원사 소개</h2>
+							<h2 class="text-base font-semibold leading-7 text-indigo-600">SUSC의 후원사 소개</h2>
 							<h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">{sponsorName}</h2>
 							<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{sponsorDescription}</p>
 							<div class="mt-8">
@@ -41,7 +40,20 @@ interface Props {
 								</div>
 							</div>
 						</div>
-						<img src={sponsorImg} alt="" class="order-1 sm:order-1 md:order-1 lg:order-2 w-[40rem] rounded-xl sm:w-[47rem] order-1 md:-ml-4 order-1 lg:-ml-0">
+						<div>
+							<img
+								id="sponsorImg"
+								src={sponsorImgW || sponsorImg}
+								alt=""
+								class="order-1 sm:order-1 md:order-1 lg:order-2 w-[40rem] rounded-xl sm:w-[47rem] order-1 md:-ml-4 order-1 lg:-ml-0"
+							/>
+							<script is:inline>
+								const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+								console.log(isDarkMode);
+								const sponsorImgElement = document.getElementById('sponsorImg');
+								console.log(sponsorImgElement);
+							</script>
+						</div>
 					</div>
 				</div>
 				<article class="text-start px-6 lg:px-8">
@@ -50,8 +62,8 @@ interface Props {
 					</div>
 				</article>
 			</Container>
-
 		</main>
 		<Footer />
 	</body>
 </html>
+

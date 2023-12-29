@@ -1,11 +1,11 @@
 ---
-const { path, studyName, studyImg, studyType, studyStatus, maxPeople, memberNameList } = Astro.props;
+const { path, studyName, studyImg, studyPeriod, studyType, maxPeople, memberNameList } = Astro.props;
 
 interface Porps {
 	studyName: string;
 	studyImg: string;
 	studyType: string;
-	studyStatus: string;
+	studyPeriod: string[];
 	maxPeople: number;
 	memberNameList: string[];
 }
@@ -36,6 +36,13 @@ let studyThumbnail = studyImg || "favicon.png";
 			<p class="mt-6 mb-8 text-gray-600 dark:text-gray-300">
 				{currentPeople} / {maxPeople} 명
 			</p>
+			<div class="flex justify-center mt-4">
+				{studyPeriod.map((studyTime: string) => (
+					<span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center">
+						{studyTime}
+					</span>
+				))}
+			</div>
 		</div>
 	</a>
 </div>

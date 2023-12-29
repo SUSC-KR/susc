@@ -1,6 +1,34 @@
+# SUSC 공식 웹사이트
+
+## SUSC 스터디 빌더로서 해야하는 것들
+1. SUSC 스터디 활동에 대해 안내 자료를 제작합니다.
+2. 디스코드를 통해 스터디를 모집합니다.
+3. SUSC 사이트에 아래의 방법을 따라 스터디 정보를 업데이트합니다.
+
+## 빌드하는 법
+1. clone 후 `npm install`을 실행합니다.
+2. `npm run dev`를 실행합니다.
+
+## SUSC 스터디 등록 방법
+
+1. SUSC의 디스코드 `학생스터디-신청`을 통해 스터디를 신청합니다.
+2. 스터디 인원이 모인다면, 스터디를 진행할 수 있습니다.
+3. 운영진에게 해당 스터디의 정보를 전달합니다.
+4. 아래의 과정을 통해 홈페이지에 등록하고 PR을 보냅니다. or 운영진에게 직접 전달합니다.
+
+### 1. 학교 데이터를 입력합니다.
+
+1. `public/images/study/{해당년도}` 폴더에 `스터디명`폴더를 생성합니다.
+2. `스터디명` 폴더에 학교 대표사진으로 사용될 스터디 대표 사진을 업로드 합니다. 만약 없다면 ""으로 비워두세요.
+3. `스터디명` 폴더 안에 `org` 폴더를 생성하여 스터디 구성원들의 사진을 업로드합니다.
+4. `src/content/study/{해당년도}` 폴더에 `계절_스터디명.mdx` 파일을 생성합니다.
+5. 아래의 형식에 맞춰 파일을 작성합니다.(SNS는 없을 경우 생략 가능)
+
+
+```mdx
 ---
 studyName: "SwiftUI 스터디"
-studyImg: "/images/study/2023/SwiftUI/SwiftuiStudyImg.png"
+studyImg: "/images/study/2023/SwiftuiStudyImg.png"
 studyType: "스터디"
 studyPeriod: ["23 Winter"]
 studyDescription: "SwiftUI를 이용하여 iOS앱을 만들 수 있습니다."
@@ -45,3 +73,5 @@ memberNameList: ["추영욱"]
 지난 여름 기초 Python, 기초 머신러닝 딥러닝, ComputerVision 스터디를 운영했었고,  
 이번 겨울방학에 SwiftUI 스터디를 맡아 진행하게 되었습니다!!  
 
+
+```

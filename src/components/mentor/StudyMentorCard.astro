@@ -20,16 +20,18 @@ interface Props {
 
 	<div class="flex flex-wrap mt-5">
 		{studyList.map((tech) => (
-			<span class="m-0.5 px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded dark:bg-gray-800 dark:text-gray-300">{tech}</span>
+			<span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{tech}</span>
+
+			// <span class="m-0.5 px-2 py-1 text-sm text-gray-700 bg-gray-200 rounded dark:bg-gray-800 dark:text-gray-300">{tech}</span>
 		))}
 	</div>
 
 	<div class="flex flex-wrap mt-5">
 		{active.map((activeTime) => (
-			<span class="m-0.5 px-2 py-1 text-sm text-gray-700 bg-green-200 rounded dark:bg-green-800 dark:text-gray-300">{activeTime}</span>
+			<span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center">{activeTime}</span>
 		))}
 	</div>
-
+	
 	<div class="flex mt-3 -mx-2">
 		{linkedIn && (
 			<a href={linkedIn} class="mx-2 text-gray-600 dark:text-gray-300" aria-label="Reddit">

@@ -1,5 +1,6 @@
 ---
 import Container from '@components/base/Container.astro';
+import Header from '@components/base/Header.astro';
 import MailFooterForm from '@components/etc/MailFooterForm';
 ---
 
@@ -11,6 +12,7 @@ import MailFooterForm from '@components/etc/MailFooterForm';
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 	</head>
 	<body class="bg-white dark:bg-gray-900">
+		<Header />
 		<main class="relative pt-36 ml-auto">
 			<Container>
 				<div class="overflow-hidden">
@@ -20,7 +22,7 @@ import MailFooterForm from '@components/etc/MailFooterForm';
                 <div class="lg:max-w-lg">
                   <h2 class="text-base font-semibold leading-7 text-indigo-600">System</h2>
                   <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">운영진 전용 메일 푸터 생성기</p>
-                  <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">이 페이지는 운영진 전용 메일 푸터를 생성하는 페이지입니다.</p>
+                  <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"">이 페이지는 운영진 전용 메일 푸터를 생성하는 페이지입니다.</p>
                 </div>
               </div>
             </div>

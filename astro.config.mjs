@@ -9,5 +9,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: 'server',
   adapter: vercelServerless(),
+  site: "https://susc.kr",
   integrations: [mdx(), sitemap(), tailwind(), react()]
 });

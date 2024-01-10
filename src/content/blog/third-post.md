@@ -1,6 +1,6 @@
 ---
 author: 'Yeonguk Choo'
-authorImg: '/blog/authors/yeonguk.webp'
+authorImg: '/blog/authors/yeonguk.jpeg'
 title: 'Third post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 15 2022'

@@ -7,8 +7,8 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
+  output: 'server',
   adapter: vercelServerless(),
-  site: "https://example.com",
+  site: "https://susc.kr",
   integrations: [mdx(), sitemap(), tailwind(), react()]
 });

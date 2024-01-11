@@ -6,7 +6,7 @@ export default function Form() {
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-    const response = await fetch("/api/mailfooter", {
+    const response = await fetch("/api/sccmailfooter", {
       method: "POST",
       body: formData,
     });

@@ -22,16 +22,18 @@ export const POST: APIRoute = async ({ request }) => {
 		<table style="width: 100%; border-collapse: collapse;">
 			<tbody>
 				<tr>
-					<td style="width: 100px; border: 0px; height: 87.4451px;"><img
-							src="https://raw.githubusercontent.com/SUSC-KR/SUSC-ArtWork/main/SUSC.png"
-							style="display: block; margin: 5px 0px; text-align: left; width: 74px;"></td>
+					<td style="width: 100px; border: 0px; height: 87.4451px;">
+						<img
+							src="https://raw.githubusercontent.com/Swift-Coding-Club/.github/main/SCC-logo.png"
+							style="display: block; margin: 5px 0px; text-align: left; width: 100px;">
+					</td>
 					<td
 						style="border: 0px solid rgb(221, 221, 221); padding: 3px 4px 2px; height: 87.4451px; vertical-align: middle;">
 						<strong id="name" style="font-size:13px;color:#000;letter-spacing:-1px;">${name}</strong>
 						<br>
 						<span
 							id="role" style="font-size:11px;color:#000;">
-							Organizer of SUSC
+							Organizer of SwiftCodingClub Korea
 						</span>
 						<div id="contact" style="color:#7d7d7d;margin-top:7px;">
 							<span
@@ -67,9 +69,9 @@ export const POST: APIRoute = async ({ request }) => {
 								</span>
 								<span
 									style="font-size:11px; color:#999;">
-									<a href="https://discord.gg/t25DNp5Y"
+									<a href="https://discord.gg/DWvW2ED6y4"
 										target="_blank">
-										https://discord.gg/t25DNp5Y
+										https://discord.gg/DWvW2ED6y4
 									</a>
 								</span>
 							</span>

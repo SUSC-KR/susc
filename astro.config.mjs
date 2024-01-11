@@ -9,6 +9,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: 'hybrid',
   adapter: vercelServerless(),
-  site: "https://example.com",
+  site: "https://susc.kr",
   integrations: [mdx(), sitemap(), tailwind(), react()]
 });

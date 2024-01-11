@@ -1,0 +1,33 @@
+---
+import Container from '@components/base/Container.astro';
+import MailFooterForm from '@components/etc/MailFooterForm';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+	</head>
+	<body class="bg-white dark:bg-gray-900">
+		<main class="relative pt-36 ml-auto">
+			<Container>
+				<div class="overflow-hidden">
+          <div class="mx-auto max-w-7xl lg:px-8">
+            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+              <div class="lg:pr-8 lg:pt-4">
+                <div class="lg:max-w-lg">
+                  <h2 class="text-base font-semibold leading-7 text-indigo-600">System</h2>
+                  <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Swift Coding Club 운영진 전용 메일 푸터 생성기</p>
+                  <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300"">이 페이지는 운영진 전용 메일 푸터를 생성하는 페이지입니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+				<MailFooterForm client:load />
+			</Container>
+		</main>
+	</body>
+</html>

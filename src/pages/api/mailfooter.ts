@@ -26,13 +26,13 @@ export const POST: APIRoute = async ({ request }) => {
 							style="display: block; margin: 5px 0px; text-align: left; width: 74px;"></td>
 					<td
 						style="border: 0px solid rgb(221, 221, 221); padding: 3px 4px 2px; height: 87.4451px; vertical-align: middle;">
-						<strong id="name" style="font-size:13px;color:#000;letter-spacing:-1px;">${name}</strong>
+						<strong id="nameOrg" style="font-size:13px;color:#000;letter-spacing:-1px;">${name}</strong>
 						<br>
 						<span
 							id="role" style="font-size:11px;color:#000;">
 							Organizer of SUSC
 						</span>
-						<div id="contact" style="color:#7d7d7d;margin-top:7px;">
+						<div id="contactInfo" style="color:#7d7d7d;margin-top:7px;">
 							<span
 								style="font-size:11px;line-height:14px;color:#999;">
 								<span

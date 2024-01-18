@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/nestjs-study-frontend", "destination": "https://susc-kr.github.io/2023W-frontend-for-nestjs" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}

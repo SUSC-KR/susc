@@ -3,7 +3,7 @@
 **더 이상 활동을 못할 것 같을 때 다른 분께 인수인계 또는 SUSC운영진께 전달해주세요!**  
 **여러분의 홍보 활동을 통해 여러분의 학교 학우들께 기회를 줄 수도 있지만, 반대로 안내가 이루어지지 않는다면 기회를 잃게됩니다.**
 
-## SUSC 학교 대표로서 해야하는 것들
+## SUSC 학교 대표(엠베서더)로서 해야하는 것들
 1. SUSC 활동에 대해서 학교에 안내합니다.(에브리타임, 동아리 홍보)
 2. 학교 구성원들을 모집합니다.
 3. SUSC 사이트에 아래의 방법을 따라 학교 정보를 업데이트합니다.
@@ -26,7 +26,7 @@
 3. `학교 약자` 폴더 안에 `org` 폴더를 생성하여 학교 구성원들의 사진을 업로드합니다.
 4. `src/content/` 폴더에 `학교 이름.mdx` 파일을 생성합니다.
 5. 아래의 형식에 맞춰 파일을 작성합니다.(SNS는 없을 경우 생략 가능)
-
+* 학교는 등록되어있는경우 `<UnivOrgCard ~ />` 부분만 복제하여 내용을 작성합니다. 
 
 ```mdx
 ---
@@ -57,7 +57,7 @@ import UnivOrgCard from '@components/univ/UnivOrgCard.astro';
 			<UnivOrgCard 
 				orgImg="/images/univ/khu/org/.jpeg"
 				orgName="이름"
-				role="동아리명 Lead"
+				role="동아리명 Lead / SUSC 학교 약자 Ambassador"
 				github="깃헙주소"
 				linkedIn="링크드인"
 				instagram="인스타"

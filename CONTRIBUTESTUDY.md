@@ -30,7 +30,7 @@
 studyName: "SwiftUI 스터디"
 studyImg: "/images/study/2023/SwiftuiStudyImg.png"
 studyType: "스터디"
-studyPeriod: ["23 Winter"]
+studyPeriod: ["24 Winter"]
 studyDescription: "SwiftUI를 이용하여 iOS앱을 만들 수 있습니다."
 audit: "청강가능"
 leadName: "추영욱"

@@ -2,41 +2,63 @@
 import Container from "@components/base/Container.astro";
 import { getCollection } from "astro:content";
 
-const title = "2023 WINTER 방학교류"
-const description = "2024년 1월부터 2월까지 약 한 달간 총 20개 대학에서 방학교류를 진행합니다."
+const title = "2024 Winter 방학교류";
+const description =
+	"2024년 1월부터 2월까지 약 한 달간 총 20개 대학에서 방학교류를 진행합니다.";
 
 // 교류에 참여하는 학생수가 정해지면 아래의 변수를 숫자로 바꿔주세요.
-const students = 102
-const mentors = 7
+const students = 102;
+const mentors = 7;
 
-const participants = students ? students : "??"
+const participants = students ? students : "??";
 
-const univs = await getCollection("univ")
+const univs = await getCollection("univ");
 ---
-
 
 <section class="text-gray-600 body-font">
 	<Container>
 		<div class="container px-5 py-12 mx-auto">
 			<div class="flex flex-col text-center w-full mb-10">
-				<h2 class="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl mb-4">{title}</h1>
+				<h2
+					class="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl mb-4"
+				>
+					{title}
+				</h2>
 				<p class="lg:w-2/3 mx-auto leading-relaxed text-base">{description}</p>
 			</div>
-			
+
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-				<div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg">
-					<h2 class="text-3xl text-gray-900 dark:text-white font-medium">{participants} 명</h2>
-					<p class="mt-2 text-gray-600 dark:text-gray-400">교류에 참여한 학생</p>
+				<div
+					class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg"
+				>
+					<h2 class="text-3xl text-gray-900 dark:text-white font-medium">
+						{participants} 명
+					</h2>
+					<p class="mt-2 text-gray-600 dark:text-gray-400">
+						교류에 참여한 학생
+					</p>
 				</div>
-				<div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg">
-					<h2 class="text-3xl text-gray-900 dark:text-white font-medium">{univs.length} 개 대학</h2>
-					<p class="mt-2 text-gray-600 dark:text-gray-400">교류에 참여한 학교</p>
+				<div
+					class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg"
+				>
+					<h2 class="text-3xl text-gray-900 dark:text-white font-medium">
+						{univs.length} 개 대학
+					</h2>
+					<p class="mt-2 text-gray-600 dark:text-gray-400">
+						교류에 참여한 학교
+					</p>
 				</div>
-				<div class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg">
-					<h2 class="text-3xl text-gray-900 dark:text-white font-medium">{mentors} 명</h2>
-					<p class="mt-2 text-gray-600 dark:text-gray-400">교류에 기여한 멘토</p>
+				<div
+					class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 p-6 rounded-lg"
+				>
+					<h2 class="text-3xl text-gray-900 dark:text-white font-medium">
+						{mentors} 명
+					</h2>
+					<p class="mt-2 text-gray-600 dark:text-gray-400">
+						교류에 기여한 멘토
+					</p>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</Container>
 </section>

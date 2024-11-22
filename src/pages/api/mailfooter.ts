@@ -4,11 +4,12 @@ export const prerender = false;
 export const POST: APIRoute = async ({ request }) => {
 	const data = await request.formData();
 	const name = data.get("name");
+	const role = data.get("role");
 	const email = data.get("email");
 	const phone = data.get("phone");
 	let htmlInlined = ""
 
-	if (!name || !email || !phone) {
+	if (!name || !role || !email || !phone) {
 		return new Response(
 			JSON.stringify({
 				htmlInlined: "Missing required fields",
@@ -31,7 +32,7 @@ export const POST: APIRoute = async ({ request }) => {
 						<br>
 						<span
 							id="role" style="font-size:11px;color:#000;">
-							Organizer of SUSC
+							${role} of SUSC
 						</span>
 						<div id="contact" style="color:#7d7d7d;margin-top:7px;">
 							<span
@@ -42,7 +43,7 @@ export const POST: APIRoute = async ({ request }) => {
 								</span> 
 								<span
 									style="font-size:11px; color:#7d7d7d;">
-									${phone}
+									&nbsp;${phone}
 								</span>
 							</span>
 							<br>
@@ -55,7 +56,7 @@ export const POST: APIRoute = async ({ request }) => {
 									style="font-size:11px; color:#999;">
 									<a href="mailto:${email}"
 										target="_blank">
-										${email}
+										&nbsp;${email}
 									</a>
 								</span>
 							</span>
@@ -67,9 +68,9 @@ export const POST: APIRoute = async ({ request }) => {
 								</span>
 								<span
 									style="font-size:11px; color:#999;">
-									<a href="https://discord.gg/t25DNp5Y"
+									<a href="https://discord.gg/rafB4nhVxx"
 										target="_blank">
-										https://discord.gg/t25DNp5Y
+										&nbsp;https://discord.gg/rafB4nhVxx
 									</a>
 								</span>
 							</span>

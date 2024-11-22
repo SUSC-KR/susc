@@ -1,8 +1,5 @@
 # SUSC 공식 웹사이트
 
-## 필요 한 것들
-* Node.js v20 이상
-
 ## 실행하는 법
 
 ### Docker를 활용하여 실행하는 법
@@ -31,3 +28,7 @@ nvm use 20
 ### 스터디
 SUSC의 스터디를 운영하시는 여러분의 활동에 감사를 드리며,  
 스터디를 운영하시는 분들을 위한 기여를 위해서는 [스터디 기여 가이드](./CONTRIBUTESTUDY.md)를 참고하세요.
+
+## License
+
+이 프로젝트는 MIT 라이선스를 따릅니다. 또한 이 레포지토리의 콘텐츠는 Creative Commons Attribution 4.0 International (CC BY 4.0) 라이선스에 따라 라이선스가 부여됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 확인해주세요.

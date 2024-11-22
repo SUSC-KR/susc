@@ -3,7 +3,15 @@
 ## 필요 한 것들
 * Node.js v20 이상
 
-## 빌드하는 법
+## 실행하는 법
+
+### Docker를 활용하여 실행하는 법
+1. 레포지토리를 clone합니다.
+2. Docker를 설치합니다.
+3. `docker-compose up`을 실행합니다.
+4. `localhost:4321`으로 접속합니다.
+
+### 로컬에 실행하는 법
 1. 레포지토리를 clone합니다.
 2. node.js v20 이상을 설치해야합니다.
 3. 그를 위해서 [Node Version Manager](https://github.com/nvm-sh/nvm) `nvm`을 설치합니다. 그리고 아래의 명령어를 실행합니다.
@@ -13,6 +21,7 @@ nvm use 20
 ```
 4. `npm install`을 실행합니다.
 5. `npm run dev`를 실행합니다.
+
 
 ## 학교 대표, 엠베서더, 스터디 멘토, 세미나 멘토, 스터디에 대해서 기여하기 위해서는 다음을 참고하세요.
 ### 학교 대표 및 엠베서더

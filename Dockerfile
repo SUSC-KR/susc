@@ -2,13 +2,11 @@ FROM node:20
 
 WORKDIR /app
 
-COPY package.json package-lock.json* ./
+COPY . .
 
 RUN npm install
 
 RUN npm install -g astro
-
-COPY . .
 
 EXPOSE 4321
 

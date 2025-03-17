@@ -42,6 +42,7 @@ export default function Form() {
           <option value="">Select a role</option>
           <option value="Organizer">Organizer</option>
           <option value="Univ Leader">Univ Leader</option>
+          <option value="Ambassador">Ambassador</option>
         </select>
       </label>
       <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">

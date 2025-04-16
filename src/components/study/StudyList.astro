@@ -9,11 +9,21 @@ const currentStudy = await getCollection("study");
 
 <div id="study">
 	<Container>
-		<div class="mb-12 space-y-2 text-center">
+		<div class="mb-8 space-y-2 text-center">
 			<h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">스터디 목록</h2>
       <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
 				SUSC에서 진행하는 스터디 목록입니다.
 			</p>
+		</div>
+		<div class="m-8 flex flex-wrap justify-center gap-y-4 gap-x-6">
+			<a
+				class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+				href="https://susc-survey.netlify.app/"
+			>
+				<span class="relative text-base font-semibold text-white"
+				>스터디 신청하기</span
+				>
+			</a>
 		</div>
 		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 			{
